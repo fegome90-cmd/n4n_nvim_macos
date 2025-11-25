@@ -1,0 +1,22 @@
+layout {
+    pane split_direction="vertical" {
+        pane size="70%" {
+            // Launch n4n (Neovim with isolated config)
+            command "env"
+            args "NVIM_APPNAME=nvim-n4n" "nvim"
+            focus true
+        }
+        pane split_direction="horizontal" size="30%" {
+            pane {
+                name "Terminal"
+            }
+            pane {
+                name "Reference"
+                // Optional: Open a reference doc or just a shell
+            }
+        }
+    }
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+}

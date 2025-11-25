@@ -1,0 +1,11 @@
+{
+  "name": "n4n-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "markdown",
+        "path": "./nursing.json"
+      }
+    ]
+  }
+}

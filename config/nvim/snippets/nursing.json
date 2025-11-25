@@ -1,0 +1,54 @@
+{
+  "Evolución Completa": {
+    "prefix": "evo",
+    "body": [
+      "---",
+      "fecha: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "turno: ${1:Diurno/Nocturno}",
+      "paciente: ${2:Nombre}",
+      "---",
+      "",
+      "# Evolución de Enfermería",
+      "",
+      "**Neurológico**: ${3:Vigil, conectado, GCS 15. Pupilas isocóricas reactivas. Sin déficit motor focal.}",
+      "",
+      "**Hemodinámico**: ${4:Normocárdico, normotenso. Sin requerimientos de DVA. Llene capilar < 2 seg.}",
+      "",
+      "**Respiratorio**: ${5:Ventilando espontáneo aire ambiente. Eupneico. Murmullo pulmonar presente, sin ruidos agregados.}",
+      "",
+      "**Tegumentario**: ${6:Piel indemne, hidratada. Sin lesiones por presión.}",
+      "",
+      "**Accesos/Dispositivos**: ${7:VVP #20 en ESI, permeable, sin signos de flebitis.}",
+      "",
+      "**Eliminación**: ${8:Diuresis espontánea (+), deposiciones (-).}",
+      "",
+      "**Plan**: ${9:Control signos vitales, administración de medicamentos, confort.}",
+      "",
+      "**Enfermero/a**: ${10:Felipe Gonzalez}"
+    ],
+    "description": "Plantilla de evolución completa por sistemas"
+  },
+  "Hemodinamia Cambio Presión": {
+    "prefix": "hcp",
+    "body": [
+      "**Evento Hemodinámico**: ${1:Hipotensión/Hipertensión}",
+      "- PA: ${2:120/80} -> ${3:90/50} mmHg",
+      "- FC: ${4:80} -> ${5:110} lpm",
+      "- Contexto: ${6:Inicio de sedación/Dolor/Sangrado}",
+      "- Manejo: ${7:Volemización 500cc SF / Inicio Noradrenalina 0.05 mcg/kg/min}",
+      "- Respuesta: ${8:PA remonta a 100/60 mmHg}"
+    ],
+    "description": "Registro rápido de cambio hemodinámico"
+  },
+  "Sistema Núcleo Objetivo": {
+    "prefix": "sno",
+    "body": [
+      "**Sistema**: ${1:Respiratorio}",
+      "- **Núcleo** (Problema): ${2:Desaturación hasta 88%}",
+      "- **Objetivo** (Meta): ${3:SatO2 > 92%}",
+      "- **Intervención**: ${4:Aumento FiO2 a 35%}",
+      "- **Evaluación**: ${5:Satura 94% a los 5 min}"
+    ],
+    "description": "Estructura SNO para problemas puntuales"
+  }
+}
