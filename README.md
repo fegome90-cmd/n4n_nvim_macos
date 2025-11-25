@@ -45,12 +45,6 @@
 - **Sin dependencias externas**: No requiere backend, base de datos ni conexión a internet
 - **Productividad enfocada**: Reduce el tiempo de documentación de 10-15 min a 3-5 min por evolución
 
-### ❌ Lo que N4N NO ES
-
-- ❌ **No es un EHR**: No reemplaza la ficha clínica electrónica del hospital
-- ❌ **No integra sistemas**: No maneja HL7/FHIR ni se conecta a sistemas hospitalarios
-- ❌ **No usa IA**: Es una herramienta de productividad basada en plantillas, no en inteligencia artificial
-- ❌ **No gestiona aspectos legales**: Los registros oficiales deben realizarse en el sistema EHR aprobado
 
 > **Filosofía**: N4N = Neovim + Snippets + Markdown. Simple, rápido y efectivo.
 
