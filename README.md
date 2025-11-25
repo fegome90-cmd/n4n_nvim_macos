@@ -1,15 +1,39 @@
-# N4N - NursingNvim
+# N4N - Nursing Neovim
 
-**Entorno de Neovim especializado para registros de enfermería**
+**Asistente de texto para escribir evoluciones de enfermería más rápido**
 
 ---
 
-## 🎯 Objetivo
+## 🎯 ¿Qué es N4N?
 
-Crear un entorno aislado de Neovim con **snippets clínicos** para documentación médica que:
-- NO afecta tu configuración global de macOS
-- Coexiste con GentlemanNvim
-- Usa variable de entorno `NVIM_APPNAME=nvim-n4n`
+**N4N es un editor de texto especializado (Neovim) con snippets clínicos**
+
+### Lo que N4N ES ✅
+- **Editor de texto** configurado para enfermería
+- **Snippets** que se expanden con Tab (evo, hcp, sno)
+- **Archivos markdown** simples (.md)
+- **Herramienta personal** para escribir evoluciones rápido
+
+### Lo que N4N NO ES ❌
+- ❌ NO es una ficha clínica electrónica
+- ❌ NO integra HL7/FHIR ni sistemas del hospital
+- ❌ NO usa IA/LLM
+- ❌ NO maneja temas legales (eso es del EHR)
+
+**N4N = Neovim + Snippets + Markdown. Nada más.**
+
+---
+
+## 🚀 Flujo de Trabajo
+
+1. Abrir Neovim: `n4n`
+2. Crear evolución: `:e turno-2025-11-25.md`
+3. Usar snippet: `evo` + Tab → plantilla completa
+4. Rellenar campos (Tab para navegar)
+5. Guardar: `:w`
+6. **Copiar/pegar al EHR del hospital**
+
+**Tiempo**: 3-5 min por evolución (vs 10-15 min manual)
 
 ---
 
@@ -17,25 +41,22 @@ Crear un entorno aislado de Neovim con **snippets clínicos** para documentació
 
 ```
 n4n-main/
-├── config/nvim/         # Configuración de Neovim → se copia a ~/.config/nvim-n4n/
-├── registros/           # Área de trabajo para registros de enfermería
-├── scripts/             # Scripts de utilidad (launcher, instalador)
-├── templates/           # Plantillas de documentos
-└── docs/                # Documentación del proyecto
-    └── ARCHITECTURE.md  # Arquitectura completa del proyecto
+├── config/nvim/         # Configuración de Neovim (se copia a ~/.config/nvim-n4n/)
+├── registros/           # Archivos markdown de evoluciones
+├── scripts/             # Launcher y utilidades
+├── templates/           # Plantillas markdown
+└── docs/                # Documentación
+    ├── SCOPE.md         # ⭐ Qué ES y NO ES N4N
+    └── ARCHITECTURE.md  # Arquitectura técnica
 ```
 
 ---
 
 ## 📖 Documentación
 
-**Para entender la arquitectura completa**, lee:
-- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) - Arquitectura detallada del proyecto
-
-**Documentación de referencia** (en repositorio principal):
-- `../dev-docs/planning/alternatives-existing-neovim.md` - Comparación de alternativas
-- `../dev-docs/planning/mac-implementation-tasklist.md` - Tasklist de implementación
-- `../dev-docs/README.md` - Índice completo de documentación
+**Empieza aquí**:
+- [`docs/SCOPE.md`](./docs/SCOPE.md) - ⭐ **Lee esto primero** (qué es y no es N4N)
+- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) - Detalles técnicos
 
 ---
 

@@ -6,14 +6,23 @@
 
 ---
 
-## 🎯 Objetivo
+## 🎯 Objetivo (Simplificado)
 
-Crear un entorno de Neovim especializado para **registros de enfermería (N4N)** que:
+**N4N = Asistente de texto para escribir evoluciones de enfermería más rápido**
 
-- ✅ **NO afecte** la configuración global de macOS
-- ✅ **Coexista** con GentlemanNvim (configuración personal)
-- ✅ Use **NVIM_APPNAME** para aislamiento completo
-- ✅ Incluya **snippets clínicos** especializados
+### Scope Real
+- ✅ **Neovim** con snippets clínicos
+- ✅ **Archivos markdown** (.md) para evoluciones
+- ✅ **Config aislada** (no afecta tu Neovim personal)
+- ✅ **Snippets** que se expanden con Tab
+
+### Fuera de Scope
+- ❌ NO es ficha clínica electrónica
+- ❌ NO integra HL7/FHIR
+- ❌ NO usa IA/LLM
+- ❌ NO maneja aspectos legales
+
+**Ver [`SCOPE.md`](./SCOPE.md) para detalles completos**
 
 ---
 
