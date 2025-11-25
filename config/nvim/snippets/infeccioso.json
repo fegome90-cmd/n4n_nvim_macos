@@ -1,0 +1,16 @@
+{
+  "Evo Infeccioso": {
+    "prefix": "evo.inf",
+    "body": [
+      "**Infeccioso**:",
+      "",
+      "- Temperatura: ${1:36.5}°C.",
+      "- Antibióticos: ${2|Sin ATB,En curso,Suspendidos,Inicio hoy|}.",
+      "- Cultivos: ${3|No aplica, Pendientes,Negativos,Positivos|}.",
+      "- Foco: ${4|No aplica, Respiratorio,Urinario,Abdominal,Piel y Partes Blandas,Catéter,Indeterminado|}.",
+      "",
+      "$0"
+    ],
+    "description": "Bloque infeccioso básico."
+  }
+}

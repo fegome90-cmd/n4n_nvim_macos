@@ -1,0 +1,28 @@
+{
+  "Evo Hemodinámico": {
+    "prefix": "evo.hdn",
+    "body": [
+      "**Hemodinámico**:",
+      "",
+      "- FC: ${1:80} lpm, FR: ${2:16} rpm, PA: ${3:120/70} mmHg, PAM: ${4:80} mmHg.",
+      "- Ritmo: ${5|Sinusal,Fibrilación Auricular,Taquicardia Sinusal,Marcapasos|}.",
+      "- DVA: ${6|Sin DVA,Noradrenalina,Dobutamina,Vasopresina,Adrenalina|}.",
+      "- Perfusión periférica: ${7|Llene capilar < 2 seg,Llene capilar > 2 seg,Extremidades tibias,Extremidades frías|}.",
+      "",
+      "$0"
+    ],
+    "description": "Bloque hemodinámico básico con menús."
+  },
+  "Hemodinamia Cambio Presión": {
+    "prefix": "evo.hemo.cp",
+    "body": [
+      "**Evento Hemodinámico**: ${1|Hipotensión,Hipertensión|}",
+      "- PA: ${2:120/80} -> ${3:90/50} mmHg",
+      "- FC: ${4:80} -> ${5:110} lpm",
+      "- Contexto: ${6|Inicio de sedación,Dolor,Sangrado,Fiebre,Desconexión|}",
+      "- Manejo: ${7:Volemización 500cc SF / Inicio Noradrenalina 0.05 mcg/kg/min}",
+      "- Respuesta: ${8:PA remonta a 100/60 mmHg}"
+    ],
+    "description": "Registro rápido de cambio hemodinámico"
+  }
+}

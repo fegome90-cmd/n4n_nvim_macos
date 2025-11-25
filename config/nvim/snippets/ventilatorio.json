@@ -1,0 +1,27 @@
+{
+  "Evo Respiratorio": {
+    "prefix": "evo.ventilatorio",
+    "body": [
+      "**Respiratorio**:",
+      "",
+      "- Soporte ventilatorio: ${1|Aire Ambiental,Cánula Nasal,Mascarilla Venturi,CNAF,VNI,VMI|}.",
+      "- SpO2: ${2:96}% con FiO2 ${3:21}%.",
+      "- Auscultación: ${4|Murmullo pulmonar presente bilateral,Disminuido bases,Crepitantes,Sibilancias,Roncus|}.",
+      "- Secreciones: ${5|Escasas,Moderadas,Abundantes|} aspecto ${6|Seroso,Mucoso,Purulento,Hemático|}.",
+      "",
+      "$0"
+    ],
+    "description": "Bloque respiratorio básico con menús."
+  },
+  "Sistema Núcleo Objetivo": {
+    "prefix": "evo.sno",
+    "body": [
+      "**Sistema**: ${1:Respiratorio}",
+      "- **Núcleo** (Problema): ${2:Desaturación hasta 88%}",
+      "- **Objetivo** (Meta): ${3:SatO2 > 92%}",
+      "- **Intervención**: ${4:Aumento FiO2 a 35%}",
+      "- **Evaluación**: ${5:Satura 94% a los 5 min}"
+    ],
+    "description": "Estructura SNO para problemas puntuales"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "Evo Examen Físico": {
+    "prefix": "evo.exam.fisico",
+    "body": [
+          "**Examen Físico**:",
+          "",
+          "- Cabeza: ${1|Normocéfalo; simetría conservada; sin lesiones visibles,Postoperatorio de craneotomía; herida operatoria limpia y seca,Traumatismo superficial; curación en buen estado,Otros hallazgos relevantes|}.",
+          "- Cuello: ${2|Móvil; sin ingurgitación yugular; sin adenopatías,Collar cervical; alineación conservada,Traqueostomía permeable; fijación y curación en buen estado,Catéter venoso central en yugular; inserción limpia y seca|}.",
+          "- Tórax: ${3|Simétrico; buena expansión; murmullo vesicular conservado; sin ruidos agregados,Asimetría de expansión; uso de musculatura accesoria; ruidos agregados,Con drenaje torácico permeable; débito y aspecto dentro de lo esperado,Con ventilación mecánica invasiva; parámetros dentro de objetivo|}.",
+          "- Abdomen: ${4|Blando; depresible; ruidos hidroaéreos presentes; indoloro a la palpación,Distendido; tenso; doloroso a la palpación; ruidos disminuidos,Postoperatorio abdominal; herida operatoria limpia y seca,Sonda nasogástrica permeable; débito y aspecto en control|}.",
+          "- Extremidades superiores: ${5|Simétricas; sin edemas; pulsos presentes; fuerza conservada,Edemas leves en manos; llenado capilar conservado,Limitación de movilidad por dolor o dispositivos,Accesos venosos periféricos permeables; inserción limpia|}.",
+          "- Genitales / periné: ${6|Higiene conservada; sin lesiones visibles,Sonda Foley permeable; diuresis adecuada; orina clara,Sonda Foley; oliguria; orina concentrada; médico en conocimiento,Lesiones o dermatitis en manejo; curaciones al día|}.",
+          "- Extremidades inferiores: ${7|Sin edemas; pulsos presentes; buena perfusión distal,Edemas +/4 en pies y piernas; piel tensa,Úlceras o lesiones en manejo; curaciones al día,Déficit motor o sensibilidad; requiere ayuda para movilización|}.",
+          "- Zona dorsal: ${8|Piel íntegra; sin lesiones por presión,Lesión por presión en manejo; apósitos limpios y secos,En riesgo elevado de LPP; reposición postural programada,Curaciones recientes; piel perilesional conservada|}.",
+          "",
+          "$0"
+        ],
+        "description": "Examen físico segmentado con opciones desplegables."
+      }
+    }

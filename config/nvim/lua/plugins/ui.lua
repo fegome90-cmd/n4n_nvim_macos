@@ -256,6 +256,20 @@ return {
           ---@type snacks.dashboard.Item[]
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            {
+              icon = " ",
+              key = "e",
+              desc = "Nuevo Registro",
+              action = function()
+                vim.ui.input({ prompt = "Nombre del archivo (ej: paciente-juan): " }, function(input)
+                  if input and input ~= "" then
+                    local fname = input:match("%.md$") and input or input .. ".md"
+                    local path = vim.fn.stdpath("config") .. "/../../registros/" .. fname
+                    vim.cmd("e " .. path)
+                  end
+                end)
+              end,
+            },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
             { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },

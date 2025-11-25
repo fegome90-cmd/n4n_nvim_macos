@@ -2,6 +2,8 @@ return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
   opts = {
+    -- Route through Claude Code Router so Neovim uses the ccr config (~/.claude-code-router/config.json)
+    terminal_cmd = "ccr code",
     terminal = {
       split_side = "left",
       split_width_percentage = 0.30,

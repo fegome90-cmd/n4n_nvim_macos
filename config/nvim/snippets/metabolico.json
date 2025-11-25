@@ -1,0 +1,16 @@
+{
+  "Evo Metabólico": {
+    "prefix": "evo.meta",
+    "body": [
+      "**Metabólico / Renal**:",
+      "",
+      "- Nutrición: ${1|Oral,SNG,SNY,GTT,NPT,Ayuno|}.",
+      "- HGT: ${2:100-140} mg/dL. Insulina: ${3|No requiere,Escala móvil,BIC|}.",
+      "- Diuresis: ${4|Espontánea,Sonda Foley,Cistostomía|}. Balance: ${5|Neutro,Positivo,Negativo|}.",
+      "- Deposiciones: ${6|Presentes,Ausentes|}.",
+      "",
+      "$0"
+    ],
+    "description": "Bloque metabólico y renal."
+  }
+}

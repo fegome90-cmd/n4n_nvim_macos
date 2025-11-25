@@ -1,0 +1,17 @@
+{
+  "Evo Quirúrgico": {
+    "prefix": "evo.quir",
+    "body": [
+      "**Quirúrgico**:",
+      "",
+      "- Herida operatoria: ${1|Afrontada,Dehiscencia,Evisceración,No aplica|}.",
+      "- Apositos: ${2|Limpios y secos, exudado antiguo y delimitado, exudado escaso, exudado moderado, exudado abundante|}",
+      "- Drenajes: ${3|Sin drenajes,Jackson Pratt, Aquaseal, Sinapi, Tophaz, Tubular,Hemosuc,Penrose|}",
+      "- Débito:   ${4|Escaso,Moderado,Abundante,Ausente|}",
+      "- Curación: ${5|Realizada,No corresponde,Pendiente|}",
+      "",
+      "$0"
+    ],
+    "description": "Bloque quirúrgico."
+  }
+}

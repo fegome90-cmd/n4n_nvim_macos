@@ -1,15 +1,15 @@
 {
   "Evo Base Cabecera": {
-    "prefix": "evo",
+    "prefix": "evo.base",
     "body": [
       "---",
       "tipo_nota: evolucion",
       "fecha: $CURRENT_DATE-$CURRENT_MONTH-$CURRENT_YEAR",
-      "turno: ${1|Diurno,Nocturno,Intermedio|}",
+      "turno: ${1|Diurno,Nocturno|}",
       "unidad: ${2:UPC Hemato-Oncológica FALP}",
       "paciente: ${3:Iniciales}",
       "cama: ${4|1,2,3,4,5,6,7,8,9,10|}",
-      "aislamiento: ${5|No,Gotitas,Contacto,Aéreo|}",
+      "aislamiento: ${5|No,Protector,Gotitas,Contacto,Aéreo|}",
       "---",
       "",
       "## Evolución de Enfermería",
@@ -17,19 +17,5 @@
       "$0"
     ],
     "description": "Cabecera de evolución: fecha + turno con menú desplegable."
-  },
-  "Evo Neurológico": {
-    "prefix": "evon",
-    "body": [
-      "**Neurológico**:",
-      "",
-      "- Nivel de conciencia: ${1|SAS 3,SAS 4,RASS 0,RASS -1,GCS 15|}.",
-      "- Pupilas: ${2|Isocóricas reactivas,Anisocóricas,Mióticas,Midriáticas|}.",
-      "- Motor: ${3|M4EE,Déficit ESI,Déficit ESD,Déficit EII,Déficit EID|}.",
-      "- Dolor: EVA ${4|0,1,2,3,4,5,6,7,8,9,10|}/10.",
-      "",
-      "$0"
-    ],
-    "description": "Bloque neurológico con menús."
   }
 }

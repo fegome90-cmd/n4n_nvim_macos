@@ -5,6 +5,34 @@
       {
         "language": "markdown",
         "path": "./nursing.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./neuro.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./hemodinamia.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./ventilatorio.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./infeccioso.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./metabolico.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./quirurgico.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./examen_fisico.json"
       }
     ]
   }
