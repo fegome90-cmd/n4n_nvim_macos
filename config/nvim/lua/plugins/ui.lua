@@ -117,39 +117,6 @@ return {
             },
           },
         },
-        {
-          filetypes = { "codecompanion" },
-          sections = {
-            lualine_a = {
-              mode,
-            },
-            lualine_b = {
-              codecompanion_adapter_name,
-            },
-            lualine_c = {
-              codecompanion_current_model_name,
-            },
-            lualine_x = {},
-            lualine_y = {
-              "progress",
-            },
-            lualine_z = {
-              "location",
-            },
-          },
-          inactive_sections = {
-            lualine_a = {},
-            lualine_b = {
-              codecompanion_adapter_name,
-            },
-            lualine_c = {},
-            lualine_x = {},
-            lualine_y = {
-              "progress",
-            },
-            lualine_z = {},
-          },
-        },
       },
     },
   },
@@ -197,38 +164,35 @@ return {
     keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } }, -- Keybinding to toggle Zen Mode
   },
 
+  -- Plugin: mini.icons
+  -- URL: https://github.com/nvim-mini/mini.icons
+  -- Description: Icon provider for Neovim.
+  {
+    "nvim-mini/mini.icons",
+    opts = {},
+    lazy = false,
+    specs = {
+      { "nvim-tree/nvim-web-devicons", enabled = false, optional = true },
+    },
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
+  },
+
   -- Plugin: snacks.nvim
   -- URL: https://github.com/folke/snacks.nvim/tree/main
   -- Description: A Neovim plugin for creating a customizable dashboard.
   {
     "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
     opts = {
-      notifier = {},
-      image = {},
-      picker = {
-        exclude = {
-          ".git",
-          "node_modules",
-        },
-        matcher = {
-          fuzzy = true,
-          smartcase = true,
-          ignorecase = true,
-          filename_bonus = true,
-        },
-        sources = {
-          -- explorer = {
-          --   matcher = {
-          --     fuzzy = true, -- Enables fuzzy matching, so you can be a bit imprecise with your search terms
-          --     smartcase = true, -- If your search term has uppercase letters, the search becomes case-sensitive
-          --     ignorecase = true, -- Ignores case when searching, unless smartcase is triggered
-          --     filename_bonus = true, -- Gives a higher priority to matches in filenames
-          --     sort_empty = false, -- If no matches are found, it won't sort the results
-          --   },
-          -- },
-        },
-      },
+      bigfile = { enabled = true },
       dashboard = {
+        enabled = true,
         sections = {
           { section = "header" },
           { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
@@ -264,7 +228,8 @@ return {
                 vim.ui.input({ prompt = "Nombre del archivo (ej: paciente-juan): " }, function(input)
                   if input and input ~= "" then
                     local fname = input:match("%.md$") and input or input .. ".md"
-                    local path = vim.fn.stdpath("config") .. "/../../registros/" .. fname
+                    local project_root = vim.env.N4N_PROJECT_ROOT or "/Users/felipe/Developer/n4n.dots-main/n4n-main"
+                    local path = project_root .. "/registros/" .. fname
                     vim.cmd("e " .. path)
                   end
                 end)
@@ -281,6 +246,62 @@ return {
           },
         },
       },
+      image = { enabled = false },
+      indent = { enabled = true },
+      input = { enabled = true },
+      notifier = { enabled = true },
+      picker = {
+        enabled = true,
+        exclude = {
+          ".git",
+          "node_modules",
+        },
+        matcher = {
+          fuzzy = true,
+          smartcase = true,
+          ignorecase = true,
+          filename_bonus = true,
+        },
+        sources = {},
+      },
+      quickfile = { enabled = true },
+      scope = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
     },
+    keys = {
+      { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+      { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+      { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+      { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+      { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse" },
+      { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
+      { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+      { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
+      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+      { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
+      { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
+      { "]]",         function() Snacks.words.jump(1, true) end, desc = "Next Reference" },
+      { "[[",         function() Snacks.words.jump(-1, true) end, desc = "Prev Reference" },
+    },
+    config = function(_, opts)
+      require("snacks").setup(opts)
+      
+      -- Set UI hooks
+      vim.ui.input = Snacks.input.input
+      vim.ui.select = Snacks.picker.select
+
+      -- Debug helpers
+      _G.dd = function(...)
+        Snacks.debug.inspect(...)
+      end
+      _G.bt = function()
+        Snacks.debug.backtrace()
+      end
+      vim.print = _G.dd
+    end,
   },
 }

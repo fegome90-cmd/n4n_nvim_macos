@@ -1,7 +1,7 @@
 -- This file contains the configuration for setting up the lazy.nvim plugin manager in Neovim.
 
 -- Node.js configuration - always use latest stable version
-vim.g.node_host_prog = vim.fn.exepath("node") or "/usr/local/bin/node"
+-- vim.g.node_host_prog = vim.fn.exepath("node")
 -- Ensure we're using a recent Node version for LSPs and plugins
 if vim.fn.executable("node") == 1 then
   local node_version = vim.fn.system("node --version"):gsub("\n", "")
@@ -53,7 +53,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.mini-files" },
     -- { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
-    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+    -- { import = "lazyvim.plugins.extras.editor.snacks_picker" },
 
     -- Formatting plugins
     { import = "lazyvim.plugins.extras.formatting.biome" },
@@ -81,8 +81,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 
     -- AI plugins
-    { import = "lazyvim.plugins.extras.ai.copilot" },
-    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    -- { import = "lazyvim.plugins.extras.ai.copilot" },
+    -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
 
     -- Import/override with your plugins
     { import = "plugins" },
@@ -95,6 +95,10 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = false, -- Always use the latest git commit
     -- version = "*", -- Try installing the latest stable version for plugins that support semver
+  },
+  rocks = {
+    enabled = false,
+    hererocks = true,
   },
   install = { colorscheme = { "tokyonight", "habamax" } }, -- Specify colorschemes to install
   checker = { enabled = true }, -- Automatically check for plugin updates
